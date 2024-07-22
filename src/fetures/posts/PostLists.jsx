@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectAllPosts } from "./postsSlice";
 import PostAuthor from "./PostAuthor";
+import TimeAgo from "./TimeAgo";
 
 const PostLists = () => {
     const getPosts = useSelector(selectAllPosts);
@@ -10,7 +11,7 @@ const PostLists = () => {
             <div>
                 <h2 className="text-6xl my-5">Posts</h2>
             </div>
-            <div className="">
+            <div className="flex  flex-col-reverse">
                 {getPosts.map((post, index) => (
                     <article
                         key={post.id}
@@ -24,7 +25,8 @@ const PostLists = () => {
                         </p>
                         <div>
                             {/* {console.log("Rendering PostAuthor with userId: ", post.userId)} */}
-                            <PostAuthor userId={post.userId} />
+                            <PostAuthor userId={post.userId} /> 
+                            <TimeAgo timestamp={post.date} />
                         </div>
                     </article>
                 ))}
