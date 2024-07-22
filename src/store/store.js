@@ -10,3 +10,4 @@ export const store = configureStore({
         storeUsers: usersReducer
     },
 });
+export const selectAllUsers = (state) => state.storeUsers;

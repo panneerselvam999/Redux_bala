@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { selectAllPosts } from "./postsSlice";
+import PostAuthor from "./PostAuthor";
 
 const PostLists = () => {
     const getPosts = useSelector(selectAllPosts);
@@ -19,10 +20,12 @@ const PostLists = () => {
                             {index + 1} : {post.title}
                         </h3>
                         <p>
-                            {post.content
-                                ? post.content.substring(0, 100)
-                                : "No content available"}
+                            {post.content.substring(0, 100)}
                         </p>
+                        <div>
+                            {/* {console.log("Rendering PostAuthor with userId: ", post.userId)} */}
+                            <PostAuthor userId={post.userId} />
+                        </div>
                     </article>
                 ))}
             </div>

@@ -4,6 +4,7 @@ const initialState = [
     { id: 1, userName: "panneer" },
     { id: 2, userName: "selvam" },
     { id: 3, userName: "krishna" },
+    { id: 4, userName: "Zahir" },
 ];
 
 const usersSlice = createSlice({
@@ -12,5 +13,4 @@ const usersSlice = createSlice({
     reducers: {},
 });
 
-export const selectAllUsers = (state) => state.users;
 export default usersSlice.reducer;
