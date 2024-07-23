@@ -8,7 +8,7 @@ const AddPostForm = () => {
     const dispatch = useDispatch();
     const [postTitle, setPostTitle] = useState("");
     const [postContent, setPostContent] = useState("");
-    const [userId, setUserId] = useState("checking");
+    const [userId, setUserId] = useState("");
     const users = useSelector(selectAllUsers);
 
     const onSavePostClicked = (e) => {
